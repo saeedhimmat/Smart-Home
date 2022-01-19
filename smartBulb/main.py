@@ -7,7 +7,7 @@ if __name__ == '__main__':
     scan = discover_bulbs()
 
     print("Available devices : " + scan[0]["ip"])
-    ip = input("Please enter the IP of the Bulb: ")
+    ip = input("\nPlease enter the IP of the Bulb: ")
 
     bulb = My_bulb(ip)
     bulb.start_music()

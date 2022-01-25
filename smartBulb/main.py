@@ -4,14 +4,17 @@ from bulb import My_bulb
 
 if __name__ == '__main__':
     print("Scanning the network..")
-    scan = discover_bulbs()
+    if discover_bulbs():
+        scan = discover_bulbs()
 
-    print("Available devices : " + scan[0]["ip"])
-    ip = input("\nPlease enter the IP of the Bulb: ")
+        print("Available devices : " + scan[0]["ip"])
+        ip = input("\nPlease enter the IP of the Bulb: ")
 
-    bulb = My_bulb(ip)
-    bulb.start_music()
+        bulb = My_bulb(ip)
+        bulb.start_music()
 
-while True:
-    massage = input("\nEnter your Message to send it in morse code: ")
-    bulb.morse_code(massage)
+        while True:
+            massage = input("\nEnter your Message to send it in morse code: ")
+            bulb.morse_code(massage)
+    else:
+        print("Please connect to the Network ")
